@@ -1,0 +1,30 @@
+extends _layout/layout
+
+//- Các giá trị mặc định cho trang web
+block variables
+	- var title = 'Home'
+	- var description = 'Description for home page'
+	- var bodyclass = 'home'
+
+//- Phần khai báo body
+block body
+	.login-form
+		.box
+			.box-inner
+				form(autocomplete="off")
+					h2.title
+						span Login Page
+					.form-group
+						.box-input#input-email-01
+							input(type="email"  autocomplete="nope")
+							label(for="input-email-01") Email Address
+						small#email-help.form-text.text-muted We'll never share your email with anyone else
+					.form-group
+						.box-input#input-password-02
+							input(type="password"  autocomplete="nope")
+							label(for="input-password-02") Password
+					.form-group
+						input#input-checkbox-01(type="checkbox")
+						label(for="input-checkbox-01") Check me out
+					.form-group
+						input#input-submit-01.btn.btn-primary(type="submit")

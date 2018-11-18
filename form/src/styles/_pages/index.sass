@@ -1,0 +1,110 @@
+
+body
+	background: #dfdfdf
+.login-form
+	display: flex
+	justify-content: center
+	align-items: center
+	height: 600px
+	.box
+		background: white
+		width: 400px
+		height: 400px
+		border: 2px #3f3f3f solid
+		border-radius: 5px
+		position: relative
+		&:before,
+		&:after
+			display: block
+			content: ""
+			position: absolute
+			top: 0
+			left: 0
+			width: 100%
+			height: 100%
+			border: 2px #3f3f3f solid
+			border-radius: 5px
+			background: white
+		&:before
+			transform: rotate(5deg)
+			z-index: -1
+		&:after
+			transform: rotate(-5deg)
+			z-index: -1
+		.box-inner
+			padding: 20px
+			form
+				.title
+					position: relative
+					text-align: center
+					&:before,
+					&:after
+						display: block
+						content: ""
+						position: absolute
+						height: 5px
+						width: 80px
+						border-radius: 1px
+					// left
+					&:before
+						top: 50%
+						transform: translateY(-50%)
+						left: 20px
+						background: linear-gradient(to left, gray , white)
+					// right
+					&:after
+						top: 50%
+						transform: translateY(-50%)
+						right: 20px
+						background: linear-gradient(to right, gray , white)
+
+			.form-group
+				margin-top: 30px
+				border: 1px red solid
+				.box-input
+					position: relative
+					padding: 5px 0
+					&:before,
+					&:after
+						display: block
+						content: ""
+						position: absolute
+						height: 3px
+						bottom: 0
+					// gray bar
+					&:before
+						width: 100%
+						left: 0
+						background: gray
+					//active bar
+					&:after
+						width: 0%
+						left: 50%
+						transform: translateX(-50%)
+						background: green
+						transition: .35s all ease-in-out
+					&.active
+						&:after
+							width: 100%
+
+					label
+						position: absolute
+						top: 0
+						left: 0
+						transition: 0.5s all ease-in-out
+						font-size: 1.2rem
+						z-index: 100
+						margin-bottom: 0
+						&.active
+							transform: translateY(-20px)
+							font-size: 0.9rem
+					input
+						position: relative
+						border: 0
+						width: 80%
+						z-index: 300
+						background: none
+						&:focus
+							border: none
+							outline: none
+							box-shadow: none
