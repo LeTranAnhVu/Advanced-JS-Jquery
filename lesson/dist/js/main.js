@@ -137,30 +137,35 @@ function letterSpacingTool() {
 
 letterSpacingTool();
 
-// lesson 3 counter module
+// lesson 4 counter module
 
 $(document).scroll(function () {
 	triggerCounterUp();
+	triggerCounterUpLesson4();
 });
 $(document).ready(function () {
 	triggerCounterUp();
+	triggerCounterUpLesson4();
 });
 $(document).resize(function () {
 	triggerCounterUp();
+	triggerCounterUpLesson4();
 });
 
 function triggerCounterUp() {
 	$('[data-count]').each(function () {
-		var objY = $(this).offset().top,
+		var $this = $(this);
+		var objY = $this.offset().top,
 		    myscreenY = $(window).height(),
 		    st = $(window).scrollTop(),
-		    maxVal = $(this).attr('data-count'),
+		    maxVal = $this.attr('data-count'),
 		    durationTo = 5000,
-		    run = false;
-		var that = this;
-		if (objY < myscreenY + st - 100 || !run) {
-			var $this = $(this);
-			$({ countNum: $this.text() }).animate({
+		    run = false,
+		    cloneObj = {
+			countNum: 0
+		};
+		if (objY + 100 < myscreenY + st && objY > st && !run) {
+			$(cloneObj).animate({
 				countNum: maxVal
 			}, {
 				duration: durationTo,
@@ -169,12 +174,51 @@ function triggerCounterUp() {
 					$this.text(Math.floor(this.countNum));
 				},
 				complete: function complete() {
-					$(this).text(this.countNum);
+					$this.text(maxVal.toString());
 					run = true;
 				}
 			});
 		} else {
+			cloneObj.countNum = 0;
 			$this.text('0');
+		}
+	});
+}
+
+function triggerCounterUpLesson4() {
+	$('#lesson-4 .counter-module-2 .outter-box .box .lesson-4-counter .number').each(function (i, item) {
+		var $target = $(item);
+		var targetY = $target.offset().top;
+		var st = $(window).scrollTop();
+		var screenY = $(window).height();
+		var isDone = false;
+		var maxVal = parseInt($target.attr('count'));
+		var clone = {
+			number: 0
+		};
+		// (targetY + 100)  < (screenY + st) && targetY > st && !isDone
+		if (targetY > st && targetY < st + screenY && !isDone) {
+			clone.number = parseInt($target.text());
+			$(clone).animate({
+				number: maxVal
+			}, {
+				duration: 3000,
+				easing: 'linear',
+				step: function step() {
+					$target.text(Math.floor(this.number).toString());
+				},
+				complete: function complete() {
+					isDone = true;
+					$target.text(maxVal.toString());
+					this.number = 0;
+				}
+			});
+		} else {
+			isDone = true;
+			clone.number = 0;
+			$target.text('0');
+			console.log($target.text());
+			// console.log('helo')
 		}
 	});
 }
