@@ -1,6 +1,78 @@
 
 body
-	background: #dfdfdf
+	background: white
+ul
+	padding: 0
+	margin: 0
+	list-style: none
+.list-lesson
+	display: flex
+	flex-direction: column-reverse
+	.lesson
+		border-bottom: 2px $carrot solid
+		margin: 50px 0
+		padding: 20px
+		.title
+			text-decoration: underline
+			text-align: center
+		.desc
+			text-align: center
+.tool
+	.row
+		[class*="col-"]
+			border: 1px black solid
+		.tool-col
+			.tool-box
+				.tool-slider
+					background: black
+					width: 80%
+					outline: none
+					opacity: 1
+					height: 25px
+.process-bar
+	margin-top: 50px
+	.stages
+		display: table
+		justify-content: center
+		align-items: center
+		cursor: pointer
+		margin: auto
+		.stage
+			display: table-cell
+			width: 100px
+			position: relative
+			text-align: center
+			&:before,
+			&:after
+				display: block
+				content: ""
+				top: -30px
+				position: absolute
+			// circle
+			&:before
+				background: red
+				width: 30px
+				height: 30px
+				border-radius: 50%
+				left: 50%
+				transform: translateX(-50%)
+				z-index: 2
+			// bar
+			&:after
+				background: red
+				height: 5px
+				width: 1%
+				top: -15px
+				transform: scaleX(100)
+				z-index: 1
+			&:first-child
+				&:after
+					display: none
+			&.active
+				&:before,
+				&:after
+					background: green
+
 .login-form
 	display: flex
 	justify-content: center
@@ -60,7 +132,6 @@ body
 
 			.form-group
 				margin-top: 30px
-				border: 1px red solid
 				.box-input
 					position: relative
 					padding: 5px 0
@@ -108,3 +179,20 @@ body
 							border: none
 							outline: none
 							box-shadow: none
+
+#lesson-3
+	.container
+		.row
+			.l-3-items
+				.row
+					padding: 0
+					margin: 0
+					[class*='col-']
+						padding: 0
+					border-top: green 1px solid
+					border-left: green 1px solid
+					.item
+						border-right: 1px green solid
+						border-bottom: 1px green solid
+						.product-box
+							height: 300px

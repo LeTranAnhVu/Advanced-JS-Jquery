@@ -6337,7 +6337,73 @@ footer img {
   max-width: 200px; }
 
 body {
-  background: #dfdfdf; }
+  background: white; }
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none; }
+
+.list-lesson {
+  display: flex;
+  flex-direction: column-reverse; }
+  .list-lesson .lesson {
+    border-bottom: 2px #e67e22 solid;
+    margin: 50px 0;
+    padding: 20px; }
+    .list-lesson .lesson .title {
+      text-decoration: underline;
+      text-align: center; }
+    .list-lesson .lesson .desc {
+      text-align: center; }
+
+.tool .row [class*="col-"] {
+  border: 1px black solid; }
+
+.tool .row .tool-col .tool-box .tool-slider {
+  background: black;
+  width: 80%;
+  outline: none;
+  opacity: 1;
+  height: 25px; }
+
+.process-bar {
+  margin-top: 50px; }
+  .process-bar .stages {
+    display: table;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin: auto; }
+    .process-bar .stages .stage {
+      display: table-cell;
+      width: 100px;
+      position: relative;
+      text-align: center; }
+      .process-bar .stages .stage:before, .process-bar .stages .stage:after {
+        display: block;
+        content: "";
+        top: -30px;
+        position: absolute; }
+      .process-bar .stages .stage:before {
+        background: red;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 2; }
+      .process-bar .stages .stage:after {
+        background: red;
+        height: 5px;
+        width: 1%;
+        top: -15px;
+        transform: scaleX(100);
+        z-index: 1; }
+      .process-bar .stages .stage:first-child:after {
+        display: none; }
+      .process-bar .stages .stage.active:before, .process-bar .stages .stage.active:after {
+        background: green; }
 
 .login-form {
   display: flex;
@@ -6391,8 +6457,7 @@ body {
           right: 20px;
           background: linear-gradient(to right, gray, white); }
       .login-form .box .box-inner .form-group {
-        margin-top: 30px;
-        border: 1px red solid; }
+        margin-top: 30px; }
         .login-form .box .box-inner .form-group .box-input {
           position: relative;
           padding: 5px 0; }
@@ -6435,5 +6500,18 @@ body {
               border: none;
               outline: none;
               box-shadow: none; }
+
+#lesson-3 .container .row .l-3-items .row {
+  padding: 0;
+  margin: 0;
+  border-top: green 1px solid;
+  border-left: green 1px solid; }
+  #lesson-3 .container .row .l-3-items .row [class*='col-'] {
+    padding: 0; }
+  #lesson-3 .container .row .l-3-items .row .item {
+    border-right: 1px green solid;
+    border-bottom: 1px green solid; }
+    #lesson-3 .container .row .l-3-items .row .item .product-box {
+      height: 300px; }
 
 /*# sourceMappingURL=main.css.map */

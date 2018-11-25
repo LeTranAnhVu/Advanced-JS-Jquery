@@ -8,23 +8,80 @@ block variables
 
 //- Phần khai báo body
 block body
-	.login-form
-		.box
-			.box-inner
-				form(autocomplete="off")
-					h2.title
-						span Login Page
-					.form-group
-						.box-input#input-email-01
-							input(type="email"  autocomplete="nope")
-							label(for="input-email-01") Email Address
-						small#email-help.form-text.text-muted We'll never share your email with anyone else
-					.form-group
-						.box-input#input-password-02
-							input(type="password"  autocomplete="nope")
-							label(for="input-password-02") Password
-					.form-group
-						input#input-checkbox-01(type="checkbox")
-						label(for="input-checkbox-01") Check me out
-					.form-group
-						input#input-submit-01.btn.btn-primary(type="submit")
+	.list-lesson
+		.lesson
+			h3.title lesson 1
+			.login-form
+				.box
+					.box-inner
+						form(autocomplete="off")
+							h2.title
+								span Login Page
+							.form-group
+								.box-input#input-email-01
+									input(type="email"  autocomplete="nope")
+									label(for="input-email-01") Email Address
+								small#email-help.form-text.text-muted We'll never share your email with anyone else
+							.form-group
+								.box-input#input-password-02
+									input(type="password"  autocomplete="nope")
+									label(for="input-password-02") Password
+							.form-group
+								input#input-checkbox-01(type="checkbox")
+								label(for="input-checkbox-01") Check me out
+							.form-group
+								input#input-submit-01.btn.btn-primary(type="submit")
+		.lesson 
+			h3.title lesson 2
+			.tool.container
+				.row
+					.col-md-12.object-col
+							.object
+								p.object-content hello world
+					.col-md-4.tool-col
+						.tool-box
+							input#letter-spacing-tool.tool-slider(type="range" min="1" max="100" value="1")
+					.col-md-8.source-col
+						p.source-code
+			.process-bar
+				button.btn.btn-danger#reset-btn reset
+				button.btn.btn-primary#next-btn next
+				button.btn.btn-warning#back-btn back
+				ul.stages
+					li.stage.active nhan hang
+					li.stage dien thong tin
+					li.stage kiem tra
+					li.stage giao hang
+					li.stage ket thuc
+		.lesson#lesson-3
+			h3.title lesson 3
+			h6.desc shop ban hang
+			.container
+				.row
+					.col-md-3.l-3-menu
+					.col-md-9.l-3-items
+						.row
+							.col-md-4.item
+								.product-box
+							.col-md-4.item
+								.product-box
+							.col-md-4.item
+								.product-box
+							.col-md-4.item
+								.product-box
+							.col-md-4.item
+								.product-box
+							.col-md-4.item
+								.product-box
+							.col-md-4.item
+								.product-box
+							.col-md-4.item
+								.product-box
+							.col-md-4.item
+								.product-box
+			.container
+				.counter-module
+					.item(data-count='200') 0
+					.item(data-count='400') 0
+					.item(data-count='600') 0
+
